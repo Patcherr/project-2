@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .pricing-table {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .plan {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .recommended {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .plan h2 {
+            font-size: 24px;
+        }
+
+        .plan .price {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .plan li {
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-table">
+        <div class="plan">
+            <h2>Plan Básico</h2>
+            <div class="price">$9/mes</div>
+            <ul>
+                <li>Acceso ilimitado a canciones</li>
+                <li>Calidad estándar</li>
+                <li>Soporte básico</li>
+            </ul>
+            <a href="#" class="cta-button">Elegir</a>
+        </div>
+        <div class="plan recommended">
+            <h2>Plan Premium</h2>
+            <div class="price">$15/mes</div>
+            <ul>
+                <li>Acceso ilimitado a canciones</li>
+                <li>Calidad alta</li>
+                <li>Soporte prioritario</li>
+            </ul>
+            <a href="#" class="cta-button">Recomendado</a>
+        </div>
+        <div class="plan">
+            <h2>Plan Familiar</h2>
+            <div class="price">$25/mes</div>
+            <ul>
+                <li>Acceso ilimitado a canciones</li>
+                <li>Calidad alta</li>
+                <li>Soporte premium</li>
+            </ul>
+            <a href="#" class="cta-button">Elegir</a>
+        </div>
+    </div>
+</body>
+</html>
