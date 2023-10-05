@@ -9,11 +9,11 @@ body{
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     
 }
 
@@ -23,6 +23,10 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0;
 }
 .logo img {
     width: 50px;
@@ -48,29 +52,7 @@ body{
 }
 
 .nav-item a:hover {
-    color: #4caf50;
-}
-
-
-p{
-    color: #000;
-    font-size: 30px;
-    position: absolute;
-    margin: 0;
-    width: 100%;
-    left: 350px;
-    top: 3px;
-}
-
-h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 36px;
-    padding: 80px 0;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    top: 60px;
-    left: 0;
+    color: #256485;
 }
 
 h2{
@@ -124,10 +106,50 @@ ul li {
     -o-transition: transform 0.2s ease-in-out;
 }
 
+.ribbon {
+    background-color: #552c6e; /* Color del lazo */
+    color: #ccc; /* Color del texto del lazo */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg); /* Rotar el lazo */
+    transform-origin: top left; /* Cambiar el origen de la rotación */
+    z-index: 1; /* Coloca el lazo encima de la tarjeta */
+}
+
+.ribbon::before,
+.ribbon::after {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent; /* Tamaño del lazo */
+}
+
+/* Estilo del lazo superior */
+.ribbon::before {
+    border-top-color: #1dbeab; /* Color del lazo */
+    border-right-width: 10px; /* Ancho del lazo */
+    top: -10px;
+    left: 0;
+}
+
+/* Estilo del lazo inferior */
+.ribbon::after {
+    border-bottom-color: #1dbeab; /* Color del lazo */
+    border-left-width: 10px; /* Ancho del lazo */
+    bottom: -10px;
+    left: 0;
+}
+
+
 .card-recommended{
     background-color: #355c7d ;
     margin: 20px;
     padding: 20px;
+    padding-top: 60px;
+    position: relative;
     border: 2px solid #ccc      ;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -152,6 +174,7 @@ ul li {
     -o-transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .button{
     background-color: #552c6e;
@@ -186,17 +209,40 @@ ul li {
     margin: 0 10px;
 }
 
-
+@media (max-width: 768px){
+    .nav-item{  
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-item.active {
+        display: flex;
+    }
+    .menu-togle {
+        display: block;
+    }   
+}
 
 @media (max-width: 640px){
     h1{
         font-size: 28px;
         top: 50px;
     }
-    .container{
+    h2{
+        font-size: 20px;
+    }
+    ul li{
+        font-size: 16px;
+    }
+    .container{    
         padding-top: 120px;
     }
-    .card{
+    .card, .card-recommended{
         max-width: 100%;
     }
 }
@@ -211,9 +257,9 @@ ul li {
 
 @media (max-width: 340px){
     .container{
-        padding-top: 60px;     
+        padding-top: 100px;     
     }
-    .card{
+    .card, .card-recommended{
         flex: 1;
         max-width: none;
         width: 100%;
@@ -226,9 +272,9 @@ ul li {
 
 @media (max-width: 280px){
     .container{
-        padding-top: 40px;
+        padding-top: 100px;
     }
-    .card{
+    .card, .card-recommended{
         padding: 10px;
     }
 }
