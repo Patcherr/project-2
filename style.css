@@ -25,7 +25,7 @@ body{
     align-items: center;
     position: fixed;
     width: 100%;
-    top: 0px;
+    top: 0;
     left: 0;
 }
 .logo img {
@@ -82,7 +82,7 @@ ul li {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
-    padding-top: 80px;
+    
 }
 
 .card{
@@ -253,7 +253,13 @@ ul li {
         justify-content: center;
         align-items: center;
     }
+
+    .ribbon{
+        display: none;
+    }
 }
+
+@media (max-width: 380px)
 
 @media (max-width: 340px){
     .container{
@@ -269,6 +275,7 @@ ul li {
         display: none;
     }
 }
+
 
 @media (max-width: 280px){
     .container{
